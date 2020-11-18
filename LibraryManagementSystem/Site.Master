@@ -62,7 +62,7 @@
             </div>
         </div>--%>
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">LibraryManagementSystem</a>
+  <a class="navbar-brand" href="Dashboard.aspx">LibraryManagementSystem</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -70,13 +70,13 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">User <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="User.aspx">User </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Auther</a>
+        <a class="nav-link" href="Author.aspx">Author</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Publisher</a>
+        <a class="nav-link" href="Publisher.aspx">Publisher</a>
       </li>
       
     </ul>
