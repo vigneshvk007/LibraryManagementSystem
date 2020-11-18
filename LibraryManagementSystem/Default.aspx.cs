@@ -13,5 +13,13 @@ namespace LibraryManagementSystem
         {
 
         }
+        protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+            string User = UserName.Text;
+            string pass = Password.Text;
+
+
+
+        }
     }
 }
