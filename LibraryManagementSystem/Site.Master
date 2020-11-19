@@ -46,10 +46,8 @@
         }
     </style>
     <script>
-        function clearsession() {
-            $.ajax({url: "default.aspx/clearsession", success: function(result){
-    
-            }});
+        function btn_LogoutClick() {
+            window.location = "Default";
         }
     </script>
 </head>
@@ -114,7 +112,7 @@
       </li>
       
     </ul>
-      <asp:Button ID="SubmitButton" runat="server" AutoPostback="true" style="text-align:right" Text="Logout" onclik="btn_LogoutClick" Causes Validation = "false"/>
+      <button id="SubmitButton"  style="text-align:right" ="LogoTextut" href="Publisher.aspx" ><a class="nav-link" href="Default.aspx">Log out</a></button>
          
       
     <%--<form class="form-inline my-2 my-lg-0">

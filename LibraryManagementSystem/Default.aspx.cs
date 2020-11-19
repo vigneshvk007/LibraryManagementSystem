@@ -17,18 +17,18 @@ namespace LibraryManagementSystem
         string connctnstring = DbConnection.ConnectionString();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-                checkSessionstate();
+            //if(!IsPostBack)
+                //checkSessionstate();
             
         }
-        public void checkSessionstate()
-        {
-            if (Session["UserType"] != null)
-            {
-                    HttpContext.Current.Response.Redirect("~/Dashboard");
-            }
+        //public void checkSessionstate()
+        //{
+        //    if (Session["UserType"] != null)
+        //    {
+        //            HttpContext.Current.Response.Redirect("~/Dashboard");
+        //    }
             
-        }
+        //}
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
             
