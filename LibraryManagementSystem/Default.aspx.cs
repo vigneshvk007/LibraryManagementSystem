@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -16,6 +17,16 @@ namespace LibraryManagementSystem
         string connctnstring = DbConnection.ConnectionString();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+                checkSessionstate();
+            
+        }
+        public void checkSessionstate()
+        {
+            if (Session["UserType"] != null)
+            {
+                    HttpContext.Current.Response.Redirect("~/Dashboard");
+            }
             
         }
         protected void SubmitButton_Click(object sender, EventArgs e)
@@ -37,15 +48,22 @@ namespace LibraryManagementSystem
                 {
                     while (reader.Read())
                     {
-                        if ((Convert.ToInt16(reader[0].ToString())) > 0)
-                        {
-                            HttpContext.Current.Response.Redirect("~/Dashboard");
-                        }
+                        Session["UserId"] = reader[0].ToString();
+                        Session["UserType"] = reader[1].ToString();
+                        HttpContext.Current.Response.Redirect("~/Dashboard");
+                        
                     }
                 }
                 sqlCon.Close();
             }
 
         }
+        //[WebMethod]
+        //public static void clearsession()
+        //{
+        //    Page.Session ses = new Page.Session();
+        //    Session.Clear();
+        //}
+        
     }
 }

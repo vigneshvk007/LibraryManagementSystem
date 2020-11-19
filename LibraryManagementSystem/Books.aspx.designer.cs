@@ -10,7 +10,7 @@
 namespace LibraryManagementSystem {
     
     
-    public partial class Author {
+    public partial class Books {
         
         /// <summary>
         /// lblName control.
@@ -40,49 +40,40 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.HiddenField hdnId;
         
         /// <summary>
-        /// lblAddress control.
+        /// lblAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAddress;
+        protected global::System.Web.UI.WebControls.Label lblAuthor;
         
         /// <summary>
-        /// txtAddress control.
+        /// ddlAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAuthor;
         
         /// <summary>
-        /// lblPhoneNumber control.
+        /// lblPublisher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhoneNumber;
+        protected global::System.Web.UI.WebControls.Label lblPublisher;
         
         /// <summary>
-        /// txtPhoneNumber control.
+        /// ddlPublisher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
-        
-        /// <summary>
-        /// RegularExpressionValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPublisher;
         
         /// <summary>
         /// SubmitButton control.

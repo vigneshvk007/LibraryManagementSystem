@@ -13,5 +13,10 @@ namespace LibraryManagementSystem
         {
 
         }
+        protected void btn_LogoutClick(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            HttpContext.Current.Response.Redirect("~/Default");
+        }
     }
 }

@@ -1,30 +1,28 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Site.Master" CodeBehind="Dashboard.aspx.cs" Inherits="LibraryManagementSystem.Dashboard" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Books.aspx.cs" Inherits="LibraryManagementSystem.Books" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h2>DashBoard</h2>
+        <h2>Books</h2>
     </div>
-
-    <p>  
-        <asp:Button ID="AddButton" runat="server" Text="Add/Edit Books" OnClick="AddButton_Click" />  
-        </p>  
-        <br />
-
     <div>  
-            <asp:Label ID="lblName" runat="server">Search by Book Name</asp:Label>  
+            <asp:Label ID="lblName" runat="server">Book Name</asp:Label>  
             <asp:TextBox ID="txtName" runat="server" ToolTip="Enter Book Name"></asp:TextBox>  
-            <asp:Label ID="lblAuthor" runat="server">Search by Author</asp:Label>
+            <asp:HiddenField ID="hdnId" runat="server" />
+            <asp:Label ID="lblAuthor" runat="server">Author</asp:Label>
             <asp:DropDownList ID="ddlAuthor" runat="server">
+                <asp:ListItem Value="">Select All</asp:ListItem>
             </asp:DropDownList> 
-            <asp:Label ID="lblPublisher" runat="server">Search by Publisher</asp:Label>
+            <asp:Label ID="lblPublisher" runat="server">Publisher</asp:Label>
             <asp:DropDownList ID="ddlPublisher" runat="server"> 
+                <asp:ListItem Value="">Select All</asp:ListItem>
             </asp:DropDownList>  
+            
         </div>  
-    <p>  
-        <asp:Button ID="SubmitButton" runat="server" Text="Search" OnClick="SearchButton_Click" />  
+        <p>  
+        <asp:Button ID="SubmitButton" runat="server" Text="Submit" OnClick="SubmitButton_Click" />  
         </p>  
         <br />
+    
     <asp:Repeater ID="rptAuthor" onitemcommand="repBookDetails_ItemCommand" runat="server">
     <HeaderTemplate>
         <table id="tblUserDetails">
@@ -43,7 +41,7 @@
                 </td>
                 
                 <td>
-                    <b>Lend</b>
+                    <b>Action</b>
                 </td>
             </tr>
     </HeaderTemplate>
@@ -62,8 +60,8 @@
                 <%# Eval("Publisher") %>
             </td>
             
-            <td>
-                            <asp:imagebutton tooltip="Lend the book" onclientclick="javascript:return confirm('Do you want to lend this book?')" id="imgBtnLender" commandname="Lend" commandargument='<%#Eval("Book_Id") %>' runat="server" imageurl="view.jpg">
+            <td><asp:imagebutton id="imgBtnEdit" commandname="Edit" tooltip="Edit a record." commandargument='<%#Eval("Book_Id") %>' runat="server" imageurl="././edit.png"></asp:imagebutton>
+                            <asp:imagebutton tooltip="Delete a record." onclientclick="javascript:return confirm('Are you sure to delete record?')" id="imgBtnDelete" commandname="Delete" commandargument='<%#Eval("Book_Id") %>' runat="server" imageurl="delete.png">
            </asp:imagebutton></td>
         </tr>
     </ItemTemplate>
@@ -72,3 +70,4 @@
     </FooterTemplate>
 </asp:Repeater>
 </asp:Content>
+
